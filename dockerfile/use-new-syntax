@@ -1,0 +1,21 @@
+# Use new docker syntax 
+
+You can use the newest docker syntax by adding on the top of your Dockerfile 
+
+```
+# syntax=docker/dockerfile:1
+```
+
+This way you can get advantage of the new syntax. For example using `EOF`. 
+
+```
+RUN <<-EOF
+  # gcompat contains libresolv.so.2 which is required by the go binary.
+  apk update && apk upgrade && apk --no-cache add gcompat wget ca-certificates
+  # create gitlab user and give write access to app dir
+  addgroup --gid 1001 gitlab
+  adduser -S gitlab -G gitlab
+  export HOME="/home/gitlab"
+  export PATH="/home/gitlab:${PATH}"
+EOF
+```

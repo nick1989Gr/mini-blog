@@ -14,7 +14,9 @@ We can add the following code snippet
 # create myuser user and give write access to app dir
 RUN adduser --disabled-password myuser && \
     chown gitlab:root /app/ && \
-    chmod g+w /app/ 
+    chmod g+w /app/
 
-USER myuser
+USER gitlab
+WORKDIR /home/gitlab
+ENV PATH /home/gitlab:${PATH}
 ```

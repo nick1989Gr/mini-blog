@@ -32,8 +32,10 @@ Remember that you need to restart your terminal to see the effect in the `go env
 
 ## Visual Studio Code still points to the old golang version
 
-On the bottom left corner (blue line) you can see which go version vs code is currently using.
+On the bottom right corner (blue line) you can see which go version vs code is currently using.
 Click on it and choose change environment. If this doesn't work follow this [guide](https://stackoverflow.com/questions/76306692/switching-go-version-when-process-envgoroot-is-set-is-unsupported). Don't forget to restart VS code. You need to close **all** VS code windows to really restart it.
+
+If the `go version` is not there just open any go.mod file and it should appear. 
 
 
 
